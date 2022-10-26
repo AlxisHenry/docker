@@ -1,0 +1,8 @@
+version: "3"
+services:
+ web:
+  image: httpd
+  ports:
+    - 80:80
+  restart: always
+  command: bash -c "rm /usr/local/apache2/htdocs/index.html && apt update && apt upgrade -y && apt install git && git clone https://github.com/AlxisHenry/sport-addict.git"
